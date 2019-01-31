@@ -31,9 +31,9 @@ module PC(input clk,
     always @ (posedge clk)
         begin 
         
-            if (RST == 1) PC = 10'd0; 
-            else if (PC_LD == 1) PC = DATA; 
-            else PC = PC + 1;
+            if (RST == 1) PC = 10'd0; //synchronous reset
+            else if (PC_LD == 1) PC = DATA; //synchronous load
+            else PC = PC + 1; // defaultcounting functionality
             
         end
 assign PC_OUT = PC;             

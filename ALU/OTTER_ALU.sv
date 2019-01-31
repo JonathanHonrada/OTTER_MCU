@@ -33,15 +33,15 @@ always_comb
                 begin
                 out = A + B;
                 end
-            4'b0001: //sub
+            4'b1000: //sub
                 begin
                 out = A - B;
                 end
-            4'b0010: //or
+            4'b0110: //or
                 begin
                 out = A | B;
                 end
-            4'b0011: //and
+            4'b0111: //and
                 begin
                 out = A & B;
                 end
@@ -53,27 +53,27 @@ always_comb
                 begin
                 out = A >> B;
                 end
-            4'b0110: //sll
+            4'b0001: //sll
                 begin
                 out = A << B;
                 end
-            4'b0111: //sra
+            4'b1101: //sra
                 begin
-                out = A >> B;
+                out = A >>> B;
                 end
-            4'b1000: //sltu
+            4'b0010: //slt SIGNED
+                begin
+                    out = ($signed(A) < $signed(B))?1 : 0;
+                end
+            4'b1011: //sltu UNSIGNED
                 begin
                 out = (A < B)?1 : 0;
                 end
-            4'b1001: //sltu
-                begin
-                out = (A < B)?1 : 0;
-                end
-            4'b1010: //copy
+            4'b1001: //copy
                 begin
                 out = A;
                 end
-            default:
+            default: //DEFAULT (UNUSUED) STATES JUST OUTPUT A + B
                 begin
                 out = A + B;
                 end

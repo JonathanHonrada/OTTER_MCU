@@ -33,7 +33,6 @@ module PC(input clk,
         
             if (RST == 1) PC = 10'd0; //synchronous reset
             else if (PC_LD == 1) PC = DATA; //synchronous load
-            else PC = PC + 1; // defaultcounting functionality
             
         end
 assign PC_OUT = PC;             

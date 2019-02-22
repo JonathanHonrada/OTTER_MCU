@@ -51,15 +51,15 @@ always_comb
                 end
             4'b0101: //slr
                 begin
-                out = A >> B;
+                out = A >> B[4:0];
                 end
             4'b0001: //sll
                 begin
-                out = A << B;
+                out = A << B[4:0];
                 end
             4'b1101: //sra
                 begin
-                out = A >>> B;
+                out = $signed(A) >>> B[4:0];
                 end
             4'b0010: //slt SIGNED
                 begin

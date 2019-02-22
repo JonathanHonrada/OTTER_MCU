@@ -28,6 +28,6 @@ module PCp1(
     always_comb
         begin
         
-            plus = COUNT + 1;
+            plus = COUNT + 4;
         end 
 endmodule
